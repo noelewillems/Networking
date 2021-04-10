@@ -1,10 +1,13 @@
+// https://stackoverflow.com/questions/2836646/java-serializable-object-to-byte-array
+// Contains an enumerated type called Command whose values are either GET or PUT.
+// To send packet over socket, must be converted from object to series of bytes which are written to the socket (convertToBytes).
+// On other end, packet is read as series of bytes then converted back to object (convertFromBytes).
+
 import java.io.*;
-/*
- * based on https://stackoverflow.com/questions/2836646/java-serializable-object-to-byte-array
- */
+
 public class Packet implements java.io.Serializable{
 	private static final long serialVersionUID = 1L;
-	int ttl;
+	int ttl; 
 	int origPort;
 	int hash;
 	Command cmd;
